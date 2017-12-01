@@ -1,0 +1,6 @@
+/vendor
+/.idea
+/laravel/.env
+/laravel/storage
+/laravel/storage/*.key
+composer.lock

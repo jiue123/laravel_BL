@@ -1,0 +1,12 @@
+{
+    "name": "laravel_project",
+    "description": "Laravel Project",
+    "authors": [
+    {
+        "name": "Le Thanh Phat",
+        "email": "lethanhphat0208@gmail.com"
+    }],
+    "require": {
+        "laravel/laravel": "5.4.*"
+    }
+}
