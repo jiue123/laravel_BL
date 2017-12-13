@@ -13,6 +13,27 @@
 
 Route::get('/', 'IndexController@index');
 
-Auth::routes();
+Route::get('/products/{category}/index', [
+    'as' => 'product.index',
+    'uses' => 'ProductController@index',
+    'products' => ['action' => 'index', 'controller' => 'Product']
+]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/bsLogin', [
+    'as' => 'login.getBSLogin',
+    'uses' => 'LoginController@getBSLogin'
+]);
+
+Route::post('/bsLogin', [
+    'as' => 'login.postLogin',
+    'uses' => 'LoginController@postLogin'
+]);
+
+//Route::group(['middleware' => 'auth'], function()
+//{
+    Route::group(['prefix' => 'bs_admin'], function() {
+        Route::get('/', function() {
+            return view('admin.index');
+        });
+    });
+//});
